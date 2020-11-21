@@ -46,7 +46,7 @@ Hi = zeros(m,n);
 for u = 1:m
     for v = 1:n
         if sqrt((u-m/2)^2+(v-n/2)^2) <= image_r      
-            Hi(u,v) = 1/(H(u,v))/B(u,v);
+            Hi(u,v) = 1/(H(u,v));
         else
             Hi(u,v) = 1;
         end
@@ -55,7 +55,7 @@ end
 %----------------------------------------------------------------------------- 
 %assignment3
 %output image
-X_F = X.*Hi;
+X_F = X.*Hi .*B;
 output = uint8(255*mat2gray(abs(ifft2(ifftshift(X_F)))));
 figure(4);          
 imshow(output);   
