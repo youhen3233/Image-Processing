@@ -48,7 +48,7 @@ for u = 1:m
         if sqrt((u-m/2)^2+(v-n/2)^2) <= image_r      
             Hi(u,v) = 1/(H(u,v))/B(u,v);
         else
-            Hi(u,v) = 0;
+            Hi(u,v) = 1;
         end
     end
 end
